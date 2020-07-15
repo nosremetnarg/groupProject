@@ -9,7 +9,7 @@
 giphyFunction = function () {
     var searchTerm = document.querySelector("#band-search").value;
     console.log(searchTerm);
-    console.log("this is called");
+    
     fetch("http://api.giphy.com/v1/gifs/search?q=" + 
     searchTerm + "&api_key=AdVi5Mrcl5ShIUm7GR1xlk3sOWLeV0sT"
     )
@@ -27,4 +27,27 @@ giphyFunction = function () {
 }
 // end if giphy search function
 
-// spotify playlist function
+// spotify function
+const APIController = function(){
+    const clientId = "";
+    const clientSecret = "";
+
+    // private methods
+    const _getToken = async () => {
+        const result = await fetch("https://accounts.spotify.com/api/token", {
+            method: "POST",
+            headers: {
+                'Content-Type' : 'application/x-www-form-urlencoded',
+                "Authorization" : "Basic " + btoa(clientId + ":" + clientSecret)
+
+            },
+            body: 'grant_type=client_credentials'
+        });
+
+        const data = await result.json();
+        return data.acces_token;
+    }
+}
+
+
+// end of spotify function

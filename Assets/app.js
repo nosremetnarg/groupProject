@@ -24,7 +24,7 @@ const APIController = (function () {
 
         const result = await fetch(`https://api.spotify.com/v1/browse/categories?locale=sv_US`, {
             method: 'GET',
-            headers: { "Authorization": "Bearer " + token }
+            headers: { 'Authorization': 'Bearer ' + token}
         });
         const data = await result.json();
         return data.categories.items;
@@ -35,21 +35,21 @@ const APIController = (function () {
         const limit = 10;
 
         const result = await fetch(`https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`, {
-            method: "GET",
-            headers: { 'Authorization': "Bearer" + token}
+            method: 'GET',
+            headers: { 'Authorization' : 'Bearer ' + token}
         });
+
         const data = await result.json();
         return data.playlists.items;
-
     }
 
-    const _getTracks = async (token, trasksEndPoint) => {
+    const _getTracks = async (token, tracksEndPoint) => {
 
         const limit = 10;
 
         const result = await fetch(`${tracksEndPoint}?limit=${limit}`, {
             method: 'GET',
-            headers: { 'Authorization': 'Bearer' + token }
+            headers: { 'Authorization' : 'Bearer ' + token}
         });
 
         const data = await result.json();
@@ -60,7 +60,7 @@ const APIController = (function () {
 
         const result = await fetch(`${trackEndPoint}`, {
             method: 'GET',
-            headers: { 'Authorization': 'Bearer' + token }
+            headers: { 'Authorization' : 'Bearer ' + token}
         });
 
         const data = await result.json();
@@ -89,11 +89,11 @@ const APIController = (function () {
     // UI Module
     const UIController = (function () {
 
-        // object to hold references to html selectors
+        //object to hold references to html selectors
         const DOMElements = {
-            selectGenre: "#select_genre",
+            selectGenre: '#select_genre',
             selectPlaylist: '#select_playlist',
-            buttonSubmit: "#btn_submit",
+            buttonSubmit: '#btn_submit',
             divSongDetail: '#song-detail',
             hfToken: '#hidden_token',
             divSonglist: '.song-list'
@@ -114,7 +114,6 @@ const APIController = (function () {
                 }
             },
 
-            
             // need methods to create select list option
             createGenre(text, value) {
                 const html = `<option value="${value}">${text}</option>`;

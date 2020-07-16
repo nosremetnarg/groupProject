@@ -33,3 +33,7 @@ img {
 img.track {
     border: 1px solid #8a8a8a;
 }
+
+h3 {
+    text-align: center;
+}

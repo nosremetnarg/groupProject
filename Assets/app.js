@@ -144,10 +144,10 @@ const APIController = (function () {
                 <img src="${img}" alt="">        
             </div>
             <div class="row col-sm-12 px-0">
-                <label for="Genre" class="form-label col-sm-12">${title}:</label>
+                <label for="Genre" class="form-label col-sm-12">Song Title: ${title}</label>
             </div>
             <div class="row col-sm-12 px-0">
-                <label for="artist" class="form-label col-sm-12">By ${artist}:</label>
+                <label for="artist" class="form-label col-sm-12">By: ${artist}</label>
             </div> 
             `;
 

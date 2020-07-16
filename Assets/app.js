@@ -36,7 +36,7 @@ const APIController = (function () {
 
         const result = await fetch(`https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`, {
             method: "GET",
-            headers: { 'Authorization': "Bearer" + token }
+            headers: { 'Authorization': "Bearer" + token}
         });
         const data = await result.json();
         return data.playlists.items;
@@ -182,7 +182,7 @@ const APIController = (function () {
 
     })();
 
-    const APPController = (function (UICtrl, APICtrl) {
+    const APPController = (function(UICtrl, APICtrl) {
 
         // get input field object ref
         const DOMInputs = UICtrl.inputField();

@@ -28,8 +28,9 @@ const APIController = (function () {
         });
         const data = await result.json();
         return data.categories.items;
+        
     }
-
+   
     const _getPlaylistByGenre = async (token, genreId) => {
 
         const limit = 10;
@@ -42,6 +43,23 @@ const APIController = (function () {
         const data = await result.json();
         return data.playlists.items;
     }
+
+    // adding Song Information
+    const _getSongInfo = async (token) => {
+
+        // const limit = 10;
+
+        const result = await fetch(`https://api.spotify.com/v1/audio-analysis/{id}`, {
+            method: 'GET',
+            headers: { 'Authorization' : 'Bearer ' + token}
+        });
+
+        const data = await result.json();
+        console.log("cheese");
+        console.log(data);
+        return data;
+    }
+    // end of Song Information
 
     const _getTracks = async (token, tracksEndPoint) => {
 
@@ -76,6 +94,9 @@ const APIController = (function () {
         },
         getPlaylistByGenre(token, genreId) {
             return _getPlaylistByGenre(token, genreId);
+        },
+        _getSongInfo(token) {
+            return _getSongInfo(token);
         },
         getTracks(token, tracksEndPoint) {
             return _getTracks(token, tracksEndPoint);
@@ -144,10 +165,10 @@ const APIController = (function () {
                 <img src="${img}" alt="">        
             </div>
             <div class="row col-sm-12 px-0">
-                <label for="Genre" class="form-label col-sm-12">Song Title: ${title}</label>
+                <label for="Genre" class="form-label col-sm-12">Song title: ${title}</label>
             </div>
             <div class="row col-sm-12 px-0">
-                <label for="artist" class="form-label col-sm-12">By: ${artist}</label>
+                <label for="artist" class="form-label col-sm-12">Artist: ${artist}</label>
             </div> 
             `;
 
@@ -229,6 +250,8 @@ const APIController = (function () {
             const tracksEndPoint = playlistSelect.options[playlistSelect.selectedIndex].value;
             // get the list of tracks
             const tracks = await APICtrl.getTracks(token, tracksEndPoint);
+            // get song info
+            // const songInfo = await APICtrl.getSongInfo(token, songInfo); // added code
             // create a track list item
             tracks.forEach(el => UICtrl.createTrack(el.track.href, el.track.name))
 

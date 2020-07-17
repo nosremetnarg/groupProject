@@ -1,41 +1,12 @@
-// button.addEventListener('click', function () {
-//     GET https://api.spotify.com/v1/artists/{id}
 
-//     curl -X "GET" "https://api.spotify.com/v1/artists/0TnOYISbd1XYRBk9myaseg" -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Bearer BQC_fAZ1y1KHvau90abcLSJKHtQrnSZ2UfUhGqIU5VcIa9k-yqMRwl0_WlKOH_hrwIkCNVleyaKq-Ew1apvtto56RncCbQfdRXEcud0fksLeYTDESqKkTekVaLIbmVtAyaKiQ03nXJ5LmSh31A"
-// })
-
-
-// gets giphy related to the user search
-giphyFunction = function () {
-    var searchTerm = document.querySelector("#band-search").value;
-    console.log(searchTerm);
-
-    fetch("http://api.giphy.com/v1/gifs/search?q=" +
-        searchTerm + "&api_key=AdVi5Mrcl5ShIUm7GR1xlk3sOWLeV0sT"
-    )
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (response) {
-            console.log(response.data[0]);
-            var responseContainerEl = document.querySelector("#response-container");
-            responseContainerEl.innerHTML = "";
-            var gifImg = document.createElement("img");
-            gifImg.setAttribute("src", response.data[0].images.fixed_height.url)
-            responseContainerEl.appendChild(gifImg);
-        });
-}
-// end if giphy search function
-
-// spotify function
-const APIController = function () {
+const APIController = (function () {
     const clientId = "ec5bc8a3442e44c2932e81c2fccd75b4";
     const clientSecret = "f19cf84e9e7f40ce997c31b8941bb7a4";
 
     // private methods
     const _getToken = async () => {
-        const result = await fetch("https://accounts.spotify.com/api/token", {
-            method: "POST",
+        const result = await fetch('https://accounts.spotify.com/api/token', {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 "Authorization": "Basic " + btoa(clientId + ":" + clientSecret)
@@ -45,15 +16,15 @@ const APIController = function () {
         });
 
         const data = await result.json();
-        return data.acces_token;
+        return data.access_token;
     }
 
     // genre search
     const _getGenres = async (token) => {
 
-        const result = await fetch('https://api.spotify.com/v1/browse/categories?locale=sv_US', {
+        const result = await fetch(`https://api.spotify.com/v1/browse/categories?locale=sv_US`, {
             method: 'GET',
-            headers: { "Authorization": "Bearer " + token }
+            headers: { 'Authorization': 'Bearer ' + token}
         });
         const data = await result.json();
         return data.categories.items;
@@ -64,24 +35,24 @@ const APIController = function () {
         const limit = 10;
 
         const result = await fetch(`https://api.spotify.com/v1/browse/categories/${genreId}/playlists?limit=${limit}`, {
-            method: "GET",
-            headers: { 'Authorization': "Bearer" + token }
+            method: 'GET',
+            headers: { 'Authorization' : 'Bearer ' + token}
         });
+
         const data = await result.json();
         return data.playlists.items;
-
     }
 
-    const _getTracks = async (token, trasksEndPoint) => {
+    const _getTracks = async (token, tracksEndPoint) => {
 
         const limit = 10;
 
-        const result = await fetch(`${trasksEndPoint}?limit=${limit}`, {
+        const result = await fetch(`${tracksEndPoint}?limit=${limit}`, {
             method: 'GET',
-            headers: { 'Authorization': 'Bearer' + token }
+            headers: { 'Authorization' : 'Bearer ' + token}
         });
 
-        const data = result.json();
+        const data = await result.json();
         return data.items;
     }
 
@@ -89,7 +60,7 @@ const APIController = function () {
 
         const result = await fetch(`${trackEndPoint}`, {
             method: 'GET',
-            headers: { 'Authorization': 'Bearer' + token }
+            headers: { 'Authorization' : 'Bearer ' + token}
         });
 
         const data = await result.json();
@@ -113,15 +84,16 @@ const APIController = function () {
             return _getTrack(token, trackEndPoint);
         }
     }
+})();
 
     // UI Module
     const UIController = (function () {
 
-        // object to hold references to html selectors
+        //object to hold references to html selectors
         const DOMElements = {
-            selectGenre: "#select_genre",
+            selectGenre: '#select_genre',
             selectPlaylist: '#select_playlist',
-            buttonSubmit: "#btn_submit",
+            buttonSubmit: '#btn_submit',
             divSongDetail: '#song-detail',
             hfToken: '#hidden_token',
             divSonglist: '.song-list'
@@ -135,14 +107,13 @@ const APIController = function () {
                 return {
                     genre: document.querySelector(DOMElements.selectGenre),
                     playlist: document.querySelector(DOMElements.selectPlaylist),
-                    songs: document.querySelector(DOMElements.divSonglist),
+                    tracks: document.querySelector(DOMElements.divSonglist),
                     submit: document.querySelector(DOMElements.buttonSubmit),
-                    songDetail: document.querySelector(DOMElements.divSongDetail),
+                    songDetail: document.querySelector(DOMElements.divSongDetail)
 
                 }
             },
 
-            // need 
             // need methods to create select list option
             createGenre(text, value) {
                 const html = `<option value="${value}">${text}</option>`;
@@ -173,10 +144,10 @@ const APIController = function () {
                 <img src="${img}" alt="">        
             </div>
             <div class="row col-sm-12 px-0">
-                <label for="Genre" class="form-label col-sm-12">${title}:</label>
+                <label for="Genre" class="form-label col-sm-12">Song Title: ${title}</label>
             </div>
             <div class="row col-sm-12 px-0">
-                <label for="artist" class="form-label col-sm-12">By ${artist}:</label>
+                <label for="artist" class="form-label col-sm-12">By: ${artist}</label>
             </div> 
             `;
 
@@ -210,7 +181,7 @@ const APIController = function () {
 
     })();
 
-    const APPController = (function (UICtrl, APICtrl) {
+    const APPController = (function(UICtrl, APICtrl) {
 
         // get input field object ref
         const DOMInputs = UICtrl.inputField();
@@ -289,10 +260,6 @@ const APIController = function () {
 
     // will need to call a method to load the genres on page load
     APPController.init();
-}
-    
-
-
 
 
 

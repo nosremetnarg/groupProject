@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify Web API Tutorial</title>
+    <title>Genre Mamba</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/skeleton.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -25,10 +25,10 @@
                     <option>Decision Time, Playah</option>                    
                 </select>                 
                 <button type="submit" id="btn_submit" class="button-primary">Search</button>
+                <div id="song-detail">            
+                </div>
             </div>          
         </form>
-            <div class="three columns" id="song-detail">            
-            </div>
             <table id="songs" class="four columns">
                 <thread>
                 <tr>
@@ -38,7 +38,7 @@
                     
                 </tbody>
                 </thread>                                             
-            </div>
+            </table>
     </div>  
     <script src="app.js" type="text/javascript"></script>
 </body>

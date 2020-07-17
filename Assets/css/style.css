@@ -3,15 +3,43 @@ html {
 }
 
 body {
-    background: rgb(2,0,36);
-    background: linear-gradient(352deg, rgba(2,0,36,1) 0%, rgba(143,143,158,0.7091211484593838) 51%, rgba(0,212,255,1) 100%);
+    background-color: #002A3A;
+    color: #CCCCCC;
 }
+
+select {
+    color: #002A3A;
+}
+
+table td {  
+    background-color:rgba(152, 154, 155, .25);
+    padding-left: 10px !important;
+}
+
+table td:hover, table td:active {  
+    background-color: #002A3A;
+
+}
+
+table td a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+table td a:hover, table td a:active {
+    color: #CCCCCC; 
+}
+
 
 .banner {
     text-align: center;
     margin-bottom: 25px;
     font-family: 'Roboto', serif;
     
+}
+
+.form-label {
+    color:#FFFFFF;
 }
 
 #profile-container {

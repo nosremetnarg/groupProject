@@ -11,28 +11,17 @@ body {
     text-align: center;
     margin-bottom: 25px;
     font-family: 'Roboto', serif;
-    
 }
 
 select {
     color: #002A3A;
     text-overflow: ellipsis;
     max-width: 200px;
-    
 }
 
 #left-column {
     margin-right: 60px;
-
 }
-
-
-/* #song-detail {
-    margin-right: 20px;
-
-} */
-
-/* Table Formats */
 
 table td {  
     background-color:rgba(152, 154, 155, .25);
@@ -41,7 +30,6 @@ table td {
 
 table td:hover, table td:active {  
     background-color: #002A3A;
-
 }
 
 table td a {
@@ -65,3 +53,7 @@ table td a:hover, table td a:active {
     border: 1px solid grey;
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+}

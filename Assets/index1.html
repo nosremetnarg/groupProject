@@ -3,45 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify Web API Tutorial</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Genre Mamba</title>
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/skeleton.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="style1.css">
 </head>
 <body>
     
-    <div class="container">  
-        <h3>Search for a playlist to match your mood</h3>      
+    <div class="row">  
+        <h3>Genre Mamba</h3>      
         <form action="">
             <input type="hidden" id='hidden_token'>
-            <div class="col-sm-6 form-group row mt-4 px-0">
-                <label for="Genre" class="form-label col-sm-2">Genre:</label>
+            <div id="left-column" class="three columns">
+                <label for="Genre" class="">Genre:</label>
                 <select name="" id="select_genre" class="form-control form-control-sm col-sm-10">
-                    <option>Select...</option>                    
+                    <option>What are you vibin'?</option>                    
                 </select>
-            </div>
-            <div class="col-sm-6 form-group row px-0">
-                <label for="Genre" class="form-label col-sm-2">Playlists: </label>
+                <label for="Genre" class="">Playlists: </label>
                 <select name="" id="select_playlist" class="form-control form-control-sm col-sm-10">
-                    <option>Select...</option>                    
-                </select>
-            </div>                  
-            <div class="col-sm-6 row form-group px-0">
-                <button type="submit" id="btn_submit" class="btn btn-success col-sm-12">Search</button>
+                    <option>Decision Time, Playah</option>                    
+                </select>                 
+                <button type="submit" id="btn_submit" class="button-primary">Search</button>
+                <div id="song-detail">            
+                </div>
             </div>          
-        </form>        
-        <div class="row">
-            <div class="col-sm-6 px-0">
-                <div class="list-group song-list">
+        </form>
+            <table id="songs" class="four columns">
+                <thread>
+                <tr>
+                    <th>Songs</th>
+                </tr> 
+                <tbody class="song-list">
                     
-                </div>                                             
-            </div>
-            <div class="offset-md-1 col-sm-4" id="song-detail">                
-            </div>
-        </div>   
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                </tbody>
+                </thread>                                             
+            </table>
+    </div>  
+    <footer>
+        <button id="light-mode-toggle" class="button-primary"
+        type="button">Toggle Boggle</button>
+    </footer>
     <script src="app.js" type="text/javascript"></script>
+    <script src="lightmode.js" type="text/javascript"></script>
 </body>
 </html>

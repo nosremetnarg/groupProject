@@ -45,7 +45,7 @@ const APIController = (function () {
 
     const _getTracks = async (token, tracksEndPoint) => {
 
-        const limit = 10;
+        const limit = 5;
 
         const result = await fetch(`${tracksEndPoint}?limit=${limit}`, {
             method: 'GET',
@@ -127,7 +127,7 @@ const APIController = (function () {
 
             // need method to create a track list group item 
             createTrack(id, name) {
-                const html = `<a href="#" class="list-group-item list-group-item-action list-group-item-light" id="${id}">${name}</a>`;
+                const html = `<td><a href="#" class="custom-song-css" id="${id}">${name}</a></td>`;
                 document.querySelector(DOMElements.divSonglist).insertAdjacentHTML('beforeend', html);
             },
 
@@ -140,14 +140,14 @@ const APIController = (function () {
 
                 const html =
                     `
-            <div class="row col-sm-12 px-0">
+            <div class="row">
                 <img src="${img}" alt="">        
             </div>
-            <div class="row col-sm-12 px-0">
-                <label for="Genre" class="form-label col-sm-12">Song Title: ${title}</label>
+            <div class="row">
+                <label for="Genre" class="form-label">Song Title: ${title}</label>
             </div>
-            <div class="row col-sm-12 px-0">
-                <label for="artist" class="form-label col-sm-12">By: ${artist}</label>
+            <div class="row">
+                <label for="artist" class="form-label">By: ${artist}</label>
             </div> 
             `;
 

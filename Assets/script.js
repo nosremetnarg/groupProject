@@ -156,8 +156,8 @@ const APIController = function () {
 
             // need method to create a track list group item 
             createTrack(id, name) {
-                const html = `<a href="#" class="list-group-item list-group-item-action list-group-item-light" id="${id}">${name}</a>`;
-                document.querySelector(DOMElements.divSonglist).insertAdjacentHTML('beforeend', html);
+                const html = `<td><a href="#" class="custom-song-css" id="${id}">${name}</a></td>`;
+                document.querySelector(DOMElements.tbody).insertAdjacentHTML('beforeend', html);
             },
 
             // need method to create the song detail

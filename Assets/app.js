@@ -271,14 +271,11 @@ const APIController = (function () {
 
 document.getElementById("random-btn").addEventListener("click", myRandomFunction) 
 var myRandomFunction = function () {
-// var searchTerm = document.querySelector("#searchTerm").value;
-// console.log(searchTerm);
-console.log("random search was called");
+console.log("random quote generator was called");
 fetch("https://quote-garden.herokuapp.com/api/v2/quotes/random")
 .then(function (response) {
     response.json().then(function(data) { 
-        console.log(data);
-        console.log(data.quote.quoteText);
+    
         var responseContainerEl = document.querySelector("#random-response-container");
         var randomresponseContainerEl = document.querySelector("#random-response-author");
         responseContainerEl.innerHTML = data.quote.quoteText;
@@ -287,8 +284,6 @@ fetch("https://quote-garden.herokuapp.com/api/v2/quotes/random")
         quoteEl.setAttribute("class", "randomquoteHere");
         var authorEl = document.createElement("div");
         authorEl.setAttribute("class", "randomAuthorHere");
-
-        // responseContainerEl.appendChild(data.quote.quoteText);
     });
 });
 }

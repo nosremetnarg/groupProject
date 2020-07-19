@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +10,20 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="style1.css">
 </head>
+
 <body>
     <header>
         <h3>BOOMTOWN</h3>
+        <!-- random quote generator -->
+    <button class="random-btn" id="random-btn" type="input" value="text" onclick="myRandomFunction()">Click for Random
+        Quote!</button>
+    <div id="random-response-container" class="randomquoteHere"></div>
+    <div id="random-response-author" class="randomAuthorHere"></div>
+    <div>
+        <p></p>
+    </div>
     </header>
-    <div id="profile" class="row">      
+    <div id="profile" class="row">
         <form>
             <div id="left-column" class="two columns">
                 <label for="Genre" class="">Find your Topic:</label>
@@ -24,13 +34,23 @@
         <div class="row">
             <div id="youtube-container" class="eight columns">
                 <div>
-                    <iframe id="if1" width="360" height="200"  src="https://www.youtube.com/embed/q7JDYiLz9Mo" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe id="if2" width="360" height="200"  src="https://www.youtube.com/embed/GRxofEmo3HA" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe id="if3" width="360" height="200"  src="https://www.youtube.com/embed/arj7oStGLkU" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <iframe id="if4" width="360" height="200"  src="https://www.youtube.com/embed/6DVbt5W-DNc" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="if1" width="360" height="200" src="https://www.youtube.com/embed/q7JDYiLz9Mo"
+                        frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <iframe id="if2" width="360" height="200" src="https://www.youtube.com/embed/GRxofEmo3HA"
+                        frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <iframe id="if3" width="360" height="200" src="https://www.youtube.com/embed/arj7oStGLkU"
+                        frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <iframe id="if4" width="360" height="200" src="https://www.youtube.com/embed/6DVbt5W-DNc"
+                        frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
+    <script src="randomQuoteGen.js"></script>
 </body>
+
 </html>

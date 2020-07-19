@@ -1,5 +1,6 @@
 
 const APIController = (function () {
+    // keys for spotify
     const clientId = "ec5bc8a3442e44c2932e81c2fccd75b4";
     const clientSecret = "f19cf84e9e7f40ce997c31b8941bb7a4";
 

@@ -5,6 +5,7 @@ html {
 body {
     background-color: #002A3A;
     color: #CCCCCC;
+    overflow: auto;
 }
 
 .banner {
@@ -16,7 +17,7 @@ body {
 select {
     color: #002A3A;
     text-overflow: ellipsis;
-    max-width: 200px;
+    max-width: 160px;
 }
 
 #left-column {
@@ -55,5 +56,6 @@ table td a:hover, table td a:active {
 
 footer {
     position: absolute;
+    width: 100%;
     bottom: 0;
 }

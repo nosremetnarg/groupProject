@@ -21,3 +21,44 @@ fetch("https://quote-garden.herokuapp.com/api/v2/quotes/random")
 });
 }
 myRandomFunction();
+
+// Search Term Quote. Using User input to search for a quote
+document.getElementById("btn").addEventListener("click", myFunction) 
+var myFunction = function () {
+var searchTerm = document.querySelector("#searchTerm").value;
+console.log("Your search term was " + searchTerm);
+console.log("Search function was called");
+fetch(`https://quote-garden.herokuapp.com/api/v2/authors/${searchTerm}?page=1&limit=10`)
+.then(function (response) {
+    response.json().then(function(data) { 
+        console.log(data);
+        console.log(data.quotes[0].quoteText);
+        var searchContainerEl = document.querySelector("#search-container");
+        searchContainerEl.innerHTML = data.quotes[0].quoteText + " - " + data.quotes[0].quoteAuthor;
+        var searchEl = document.createElement("div");
+        searchEl.setAttribute("class", "randomquote");
+        
+        // searchContainerEl.appendChild(data.quote.quoteText);
+    });
+});
+}
+// gets giphy related to the user search
+giphyFunction = function () {
+    var searchTerm = document.querySelector("#band-search").value;
+    console.log(searchTerm);
+
+    fetch("http://api.giphy.com/v1/gifs/search?q=" +
+        searchTerm + "&api_key=AdVi5Mrcl5ShIUm7GR1xlk3sOWLeV0sT"
+    )
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (response) {
+            console.log(response.data[0]);
+            var responseContainerEl = document.querySelector("#response-container");
+            responseContainerEl.innerHTML = "";
+            var gifImg = document.createElement("img");
+            gifImg.setAttribute("src", response.data[0].images.fixed_height.url)
+            responseContainerEl.appendChild(gifImg);
+        });
+}

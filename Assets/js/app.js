@@ -268,6 +268,7 @@ const APPController = (function (UICtrl, APICtrl) {
                     var gifImg = document.createElement("img");
                     gifImg.setAttribute("src", response.data[0].images.fixed_height.url);
                     responseContainerEl.appendChild(gifImg);
+                    // responseContainerEl.removeChild(responseContainerEl.childNodes[1]);
                 });
         }
         giphyFunction(trackResult);
@@ -292,7 +293,6 @@ const APPController = (function (UICtrl, APICtrl) {
         getSongLyrics();
 
         // // this function generates a quote based on the clicked song artist
-
         // var myFunction = function () {
         //     fetch("https://quote-garden.herokuapp.com/api/v2/authors/" + trackResult + "?page=1&limit=10")
         //         .then(function (response) {
@@ -309,7 +309,6 @@ const APPController = (function (UICtrl, APICtrl) {
         //                     var authorEl = document.createElement("div");
         //                     authorEl.setAttribute("class", "randomAuthorHere");
         //                     // searchContainerEl.appendChild(data.quote.quoteText);
-
         //                     // LOCAL STORAGE
         //                     localStorage.setItem("searchTerm", data.quotes[0].quoteText, data.quotes[0].quoteAuthor);
         //                 });

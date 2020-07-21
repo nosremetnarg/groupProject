@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,45 +10,52 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="style1.css">
 </head>
+
 <body>
     <header>
         <h3>Genre Mamba</h3>
     </header>
     <div class="container">
-        <div class="row">      
+        <div class="row">
             <form action="">
                 <input type="hidden" id='hidden_token'>
                 <div id="left-column" class="three columns">
                     <label for="Genre" class="">Genre:</label>
                     <select name="" id="select_genre" class="form-control form-control-sm col-sm-10">
-                        <option>What are you vibin'?</option>                    
+                        <option>What are you vibin'?</option>
                     </select>
                     <label for="Genre" class="">Playlists: </label>
                     <select name="" id="select_playlist" class="form-control form-control-sm col-sm-10">
-                        <option>Decision Time, Playah</option>                    
-                    </select>                 
+                        <option>Decision Time, Playah</option>
+                    </select>
                     <button type="submit" id="btn_submit" class="button-primary">Search</button>
-                    <div id="song-detail">            
+                    <div id="song-detail">
                     </div>
-                </div>          
+                </div>
             </form>
-                <table id="songs" class="four columns">
-                    <thread>
+            <table id="songs" class="four columns">
+                <thread>
                     <tr>
                         <th>Songs</th>
-                    </tr> 
-                    <tbody class="song-list">
-                        
+                    </tr>
+                    <tbody class="song-list" id="song-list">
+
                     </tbody>
-                    </thread>                                             
-                </table>
-        </div>  
+                </thread>
+            </table>
+        </div>
+        <!-- <input class="button-primary btn" id="band-search" onclick="giphyFunction(), myFunction()" type="submit"
+            value="Let's Jam"> -->
+        <div id="response-container" class="randomquoteHere"></div>
+        <div></div>
+        <div id="random-response-author" class="randomAuthorHere"></div>
+        <div id="lyric-container" class="lyricContainer"></div>
     </div>
     <footer>
-        <button id="light-mode-toggle" class="button-primary"
-        type="button">Toggle Boggle</button>
+        <button id="light-mode-toggle" class="button-primary" type="button">Toggle Boggle</button>
     </footer>
     <script src="app.js" type="text/javascript"></script>
     <script src="lightmode.js" type="text/javascript"></script>
 </body>
+
 </html>

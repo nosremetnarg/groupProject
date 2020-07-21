@@ -65,13 +65,12 @@ var myFunction = function () {
                     var authorEl = document.createElement("div");
                     authorEl.setAttribute("class", "randomAuthorHere");
                     // searchContainerEl.appendChild(data.quote.quoteText);
+
+                    // LOCAL STORAGE
+                    localStorage.setItem("searchTerm", data.quotes[0].quoteText, data.quotes[0].quoteAuthor);
                 });
-            } else {
-                var searchContainerEl = document.querySelector(".randomquoteHere");
-                searchContainerEl.innerHTML = "No quotes available";
-                var searchEl = document.createElement("div");
-            }
-        });
+            } 
+        }); 
 }
 // gets giphy related to the user search
 giphyFunction = function () {

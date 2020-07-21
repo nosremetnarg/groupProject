@@ -31,6 +31,7 @@ function searchMusixMatch( track, artist ) {
                 return
             }
 
+
             var track_id = response.message.body.track_list[ 0 ].track.track_id
             searchMusixMatchLyrics( track_id )
         } )
@@ -56,6 +57,7 @@ function searchMusixMatchLyrics( id ) {
                 $( "#modal-message" ).text( "No lyrics found" )
                 return
             }
+
 
             var lyrics = response.message.body.lyrics.lyrics_body
 

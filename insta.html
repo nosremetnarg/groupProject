@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Feed Demo</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+</head>
+
+<body>
+    <h1 style="text-align: center;">Instagram Feed Search</h1>
+    <form id="myForm" autocomplete="off">
+        <input type="text" id="username" placeholder="Enter Username" required>
+        <input type="submit" value="Search">
+    </form>
+    <div id="instagram-feed-demo" class="instagram_feed"></div>
+</body>
+<script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="jquery.instagramFeed.js"></script>
+
+<script>
+        $(window).on('load', function(){
+            $.instagramFeed({
+                'username': 'instagram',
+                'container': "#instagram-feed1",
+                'display_profile': true,
+                'display_biography': true,
+                'display_gallery': true,
+                'callback': null,
+                'styling': true,
+                'items': 8,
+                'items_per_row': 4,
+                'margin': 1,
+                'lazy_load': true,
+                'on_error': console.error
+            });
+        });
+    (jQuery);
+</script>
+
+</html>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./Assets/css/skeleton.css">
     <link rel="stylesheet" href="./Assets/css/style.css">
     <title>Group Project</title>
+
 </head>
 
 <body>
@@ -53,16 +54,44 @@
                 <div>Fill Container</div>
             </div>
             <div>
-
-                <div id="lyrics"></div>
-
             </div>
         </div>
-
+    </div>
     </div>
 
+    <!-- MUSIXMATCH LYRICS START -->
+    <section id="musixmatch-lyrics" class="lyrics">
+        <div class="flex-box">
+            <div id="search-lyrics">
+                <h4 class="section-title" secondary-border">What Tune are You Humming?</h4>
+
+                <div id="song-search">
+                    <input type="text" placeholder="Killer Tune Name" id="tune">
+                    <input type="text" placeholder="Artist Name (optional)" id="artist">
+                </div>
+
+                <div class="search-box" id="">
+                    <button type="submit" id="btn_submit" class="button-primary">Search</button>
+                    <div id="song-detail">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="lyrics"></div>
+    <!-- MODAL CONTENT -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-message">No Song / Artist Found</p>
+        </div>
     </div>
-    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="./Assets/musixmatch.js"></script>
+    <!-- MUSIXMATCH LYRICS STOP -->
+
     <script src="Assets/script.js"></script>
 </body>
 

@@ -251,7 +251,7 @@ const APPController = (function (UICtrl, APICtrl) {
         console.log(track.artists[0].name);
         const trackResult = track.artists[0].name;
 
-        // // gets giphy related to the user selection
+// // gets giphy related to the user selection
         giphyFunction = function () {
             // var searchTerm = document.querySelector("#band-search").value;
             // console.log(searchTerm);

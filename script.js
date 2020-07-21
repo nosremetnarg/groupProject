@@ -49,7 +49,7 @@ function getRequest(searchTerm) {
         q: searchTerm
     };
   
-    $.getJSON(url, params, showResults);
+    $.getJSON(url, showResults);
 }
 
 function showResults(results) {

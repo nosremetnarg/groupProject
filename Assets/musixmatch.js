@@ -58,6 +58,7 @@ function searchMusixMatchLyrics( id ) {
             }
 
             var lyrics = response.message.body.lyrics.lyrics_body
+
             $( "#lyrics" ).text( lyrics )
         } )
         .catch( function ( error ) {

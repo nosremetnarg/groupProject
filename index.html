@@ -16,76 +16,80 @@
         <h1 class="banner">Our Awesome Music App</h1>
     </header>
 
-    <div class="container">
-        <div class="row">
-            <div id="profile-container" class="three columns">
-                <img src="https://via.placeholder.com/150" alt="Placeholder">
-                <div class="SpotifyData" id="response-container">Input Info (Spotify?)</div>
-                <!-- <button class="btn button"></button> -->
-                <div>Input Info (iTunes?)</div>
-                <div>Input Info (Wikipedia?)</div>
-                <div>Input Info (Instagram?)</div>
-                <div>Input Info (Twitter?)</div>
-                <!-- <form> -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div id="profile-container" class="three columns">
+                    <img src="https://via.placeholder.com/150" alt="Placeholder">
+                    <div class="SpotifyData" id="response-container">Input Info (Spotify?)</div>
+                    <!-- <button class="btn button"></button> -->
+                    <div>Input Info (iTunes?)</div>
+                    <div>Input Info (Wikipedia?)</div>
+                    <div>Input Info (Instagram?)</div>
+                    <div>Input Info (Twitter?)</div>
+                    <!-- <form> -->
 
-                <label for="band-search">Search Below</label>
-                <input class="u-full-width" type="" placeholder="Find a Band" id="band-search">
+                    <label for="band-search">Search Below</label>
+                    <input class="u-full-width" type="" placeholder="Find a Band" id="band-search">
 
-                <input class="button-primary" onclick="giphyFunction()" type="submit" value="Let's Jam">
+                    <input class="button-primary" onclick="giphyFunction()" type="submit" value="Let's Jam">
 
-                <!-- </form> -->
-            </div>
-            <div id="content-container" class="eight columns">
-                <img src="https://via.placeholder.com/625x60/000000/FFFFFF/?text=Music+Banner+Population" alt="music-content">
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-                <div>Fill Container</div>
-            </div>
-            <div>
+                    <!-- </form> -->
+                </div>
+                <div id="content-container" class="eight columns">
+                    <img src="https://via.placeholder.com/625x60/000000/FFFFFF/?text=Music+Banner+Population" alt="music-content">
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                    <div>Fill Container</div>
+                </div>
+                <div>
+                </div>
             </div>
         </div>
-    </div>
-    </div>
+        </div>
+    </section>
+
 
     <!-- MUSIXMATCH LYRICS START -->
     <section id="musixmatch-lyrics" class="lyrics">
-        <div class="flex-box">
+        <div class="flex-row">
             <div id="search-lyrics">
-                <h4 class="section-title" secondary-border">What Tune are You Humming?</h4>
+                <h5 class="section-title" secondary-border">What Tune are You Humming?</h5>
 
                 <div id="song-search">
                     <input type="text" placeholder="Killer Tune Name" id="tune">
                     <input type="text" placeholder="Artist Name (optional)" id="artist">
                 </div>
 
-                <div class="search-box" id="">
+                <div class="search-box">
                     <button type="submit" id="btn_submit" class="button-primary">Search</button>
-                    <div id="song-detail">
-                    </div>
                 </div>
             </div>
         </div>
     </section>
+
     <div id="lyrics"></div>
-    <!-- MODAL CONTENT -->
+
+    <!-- MUSIXMATCH MODAL CONTENT START -->
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <p id="modal-message">No Song / Artist Found</p>
         </div>
     </div>
+    <!-- MUSIXMATCH MODAL CONTENT END -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>

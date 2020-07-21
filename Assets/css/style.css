@@ -58,10 +58,13 @@ footer {
     bottom: 0;
 }
 
+/* MUSIXMATCH START */
+
 .modal {
-    display: none; /* Hidden by default */
+  display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
+  padding-top: 100px;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -73,19 +76,20 @@ footer {
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #fefefe38;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    border: 5px solid rgba(136, 136, 136, 0.39);
+    width: 75%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button */
   .close {
-    color: #aaa;
-    float: right;
+    color: rgba(170, 170, 170, 0.392);
+    float: right!important;
     font-size: 28px;
     font-weight: bold;
+    text-align: center;
   }
   
   .close:hover,

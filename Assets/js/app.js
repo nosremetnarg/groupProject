@@ -276,7 +276,7 @@ const APPController = (function (UICtrl, APICtrl) {
         var getSongLyrics = function () {
 
             var songApi = `https://api.lyrics.ovh/v1/` + track.artists[0].name + "/" + track.name;
-            // var songApi = `https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?format=jsonp&callback=callback&q_track=humble.&q_artist=Kendrick%20Lamar&apikey=6393f83d3ee7bda4a593005636bb6560`;
+            // var songApi = `https://api.musixmatch.com/ws/1.1/matcher.lyrics.get?format=jsonp&callback=callback&q_track=`+ track.name + `&q_artist=` + track.artists[0].name +`&apikey=6393f83d3ee7bda4a593005636bb6560`;
             // make fetch
             fetch(songApi).then(function (response) {
                 return response.json().then(function (data) {
@@ -284,9 +284,9 @@ const APPController = (function (UICtrl, APICtrl) {
                     console.log(data.lyrics);
                     var responseContainerEl = document.querySelector("#lyric-container");
                     responseContainerEl.innerHTML = data.lyrics;
-                    var gifImg = document.createElement("span");
+                    var artistQuote = document.createElement("span");
                     // gifImg.setAttribute("src", data.lyrics);
-                    responseContainerEl.appendChild(gifImg);;
+                    responseContainerEl.appendChild(artistQuote);;
                 });
             })
         }

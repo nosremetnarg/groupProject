@@ -26,10 +26,10 @@ function getDataFromYoutube(event) {
     var url=`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${artist}&key=AIzaSyBQ1GFSeS6gr-Q4QZgRIdpLik6Ijpbv8mc`
     console.log(url);
 
-    // function callYoutube(myExpression) {
-    //     var queryURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=' + myExpression + '&safeSearch=strict&key=AIzaSyBQ1GFSeS6gr-Q4QZgRIdpLik6Ijpbv8mc&type=video';
+    function callYoutube(myExpression) {
+        var queryURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${artist}&key=AIzaSyBQ1GFSeS6gr-Q4QZgRIdpLik6Ijpbv8mc' + myExpression + '&safeSearch=strict&key=AIzaSyBQ1GFSeS6gr-Q4QZgRIdpLik6Ijpbv8mc&type=video';
 
-        // console.log(myExpression)
+        console.log(myExpression)
 
         $.ajax({
             url: queryURL,

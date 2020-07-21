@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/css/normalize.css">
+    <link rel="stylesheet" href="./Assets/css/skeleton.css">
+    <link rel="stylesheet" href="./Assets/css/style.css">
+    <title>Group Project</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="banner">Our Awesome Music App</h1>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div id="profile-container" class="three columns">
+                <img src="https://via.placeholder.com/150" alt="Placeholder">
+                <div class="SpotifyData" id="response-container">Input Info (Spotify?)</div>
+                <!-- <button class="btn button"></button> -->
+                <div>Input Info (iTunes?)</div>
+                <div>Input Info (Wikipedia?)</div>
+                <div>Input Info (Instagram?)</div>
+                <div>Input Info (Twitter?)</div>
+                <!-- <form> -->
+                <label for="band-search">Search Below</label>
+                <input class="u-full-width" type="" placeholder="Find a Band" id="band-search">
+                <input class="button-primary btn" id="band-search" onclick="giphyFunction(), myFunction()" type="submit"
+                    value="Let's Jam">
+                <!-- </form> -->
+            </div>
+            <div id="content-container" class="eight columns">
+                <img src="https://via.placeholder.com/625x60/000000/FFFFFF/?text=Music+Banner+Population"
+                    alt="music-content">
+                <div>Fill Container</div>
+                <div>Fill Container</div>
+                <div>Fill Container</div>
+                <div>Fill Container</div>
+                <div>Fill Container</div>
+                <div>Fill Container</div>
+                <div>Fill Container</div>
+                <div>Fill Container</div>
+                <div>Fill Container</div>
+                <div>Fill Container</div>
+                <div>Fill Container</div>
+                <div>Fill Container</div>
+                <div>Fill Container</div>
+                <div>Fill Container</div>
+                <div>Quote section</div>
+                <div>
+                    <!-- random quote generator -->
+                    <button class="random-btn" id="random-btn" type="input" value="text"
+                        onclick="myRandomFunction()">Click for Random
+                        Quote:</button>
+                    <div id="random-response-container" class="randomquoteHere"></div>
+                    <div id="random-response-author" class="randomAuthorHere"></div>
+                    <!-- <div>
+                        <p></p>
+                    </div> -->
+                    <!-- Search term: <input type="text" id="searchTerm" value="" /> -->
+                    <div>
+                        <!-- <button class="btn" id="btn" type="input" value="text" onclick="myFunction()"></button> -->
+                        <!-- <div id="search-container" class="searchHere">Searched Quote: </div> -->
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="Assets/js/script.js"></script>
+    <script src="Assets/js/randomQuoteGen.js"></script>
+</body>
+
+</html>

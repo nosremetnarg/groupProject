@@ -26,27 +26,13 @@
                 <!-- <form> -->
                     <label for="band-search">Search Below</label>
                     <input class="u-full-width" type="" placeholder="Find a Band" id="band-search">
-                    <input class="button-primary" onclick="giphyFunction()" type="submit" value="Let's Jam">
+                    <input class="button-primary" id="btn" onclick="getDataFromYoutube()" type="submit" value="artist">
                 <!-- </form> -->
             </div>
                 <div id="content-container" class="eight columns">
                     <img src="https://via.placeholder.com/625x60/000000/FFFFFF/?text=Music+Banner+Population" alt="music-content">
                     <div>        <h1 class="title">Youtube API</h1>
-                        <form id="yt-form">
-                            <p><input type="text" id="keyword-input" placeholder="Enter keyword" required></p>
-                            <p><input type="number" id="maxresult-input" placeholder="Max Results" min="1" max="10" required></p>
-                            <p>
-                                <select id="order-input" required>
-                                    <option value="">--SELECT--</option>
-                                    <option value="date">Date</option>
-                                    <option value="rating">Rating</option>
-                                    <option value="title">Title</option>
-                                </select>
-                            </p>
-                            <p>
-                                <button id="search">search</button>
-                            </p>
-                        </form>
+                       
                      
                         <div id="videoListContainer"></div>
                         <div id="output"></div></div>

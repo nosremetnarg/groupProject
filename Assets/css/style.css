@@ -2,16 +2,100 @@ html {
     min-height:100%;
 }
 
+
+header h3 {
+    text-align: center;
+}
+
 body {
-    background: rgb(2,0,36);
-    background: linear-gradient(352deg, rgba(2,0,36,1) 0%, rgba(143,143,158,0.7091211484593838) 51%, rgba(0,212,255,1) 100%);
+    background-color: #002A3A;
+    color: #CCCCCC;
+    overflow: auto;
+}
+
+body.lightmode{
+    background-color: #CCCCCC;
+    color: #002A3A;
+    overflow: auto;
+}
+
+#topic-search-input {
+    color: #002A3A;
 }
 
 .banner {
     text-align: center;
     margin-bottom: 25px;
     font-family: 'Roboto', serif;
-    
+}
+
+select {
+    color: #002A3A;
+    text-overflow: ellipsis;
+    max-width: 160px;
+}
+
+#left-column {
+    margin-right: 150px;
+    align-items: center;
+}
+
+#response-container img{
+    height: auto;
+    width: 230px;
+}
+
+#youtube-container .four.columns {
+    width:400px !important;
+    margin-right:4% !important;
+}
+
+#youtube-container .four.columns:nth-of-type(2) {
+    margin-left:0 !important;
+}
+
+#topic-search {
+    max-width: 160px;
+}
+
+table td {  
+    background-color:rgba(152, 154, 155, .25);
+    padding-left: 10px !important;
+}
+
+.lightmode table td {
+    background-color:rgba(152, 154, 155, .75);
+    padding-left: 10px !important;
+}
+
+table td:hover, table td:active {  
+    background-color: #002A3A;
+}
+
+.lightmode table td:hover, .lightmode table td:active {  
+    background-color: #cdcbcd;
+}
+
+table td a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.lightmode table td a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+table td:hover > a, table td:active > a {
+    color: #cccccc;
+}
+
+.lightmode table td:hover > a, .lightmode table td:active > a {
+    color: #002A3A;
+}
+
+.form-label {
+    color: #002A3A;
 }
 
 #profile-container {
@@ -22,3 +106,18 @@ body {
     border: 1px solid grey;
 }
 
+#lyric-container {
+    white-space: pre-wrap;
+}
+
+.top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.top-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}

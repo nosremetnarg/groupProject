@@ -15,7 +15,7 @@
 
 ## Boggle Toggle
 
-Have you ever though to yourself, I wonder what 14 APIs minus 10 APIs search results could be simultaneously?
+Have you ever thought to yourself, I wonder what 14 APIs minus 10 APIs search results could be simultaneously?
 
 We've built the application that'll knock off your socks and strap in your Crocs!
 

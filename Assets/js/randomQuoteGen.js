@@ -47,7 +47,7 @@ myRandomFunction();
 // Search Term Quote. Using User input to search for a quote
 // document.getElementById("btn").addEventListener("click", myFunction) 
 var myFunction = function () {
-    var searchTerm = document.querySelector("#topic-search").value;
+    var searchTerm = document.querySelector("#topic-search-input").value;
     console.log("Your search term was " + searchTerm);
     console.log("Search function was called");
     fetch(`https://quote-garden.herokuapp.com/api/v2/authors/${searchTerm}?page=1&limit=10`)
@@ -55,7 +55,6 @@ var myFunction = function () {
             if (response.ok) {
                 response.json().then(function (data) {
                     console.log(data);
-                    console.log(data.quotes[0].quoteText);
                     var searchContainerEl = document.querySelector(".randomquoteHere");
                     searchContainerEl.innerHTML = data.quotes[0].quoteText;
                     var searchEl = document.createElement("div");
@@ -74,7 +73,7 @@ var myFunction = function () {
 }
 // gets giphy related to the user search
 giphyFunction = function () {
-    var searchTerm = document.querySelector("#topic-search").value;
+    var searchTerm = document.querySelector("#topic-search-input").value;
     console.log(searchTerm);
 
     fetch("http://api.giphy.com/v1/gifs/search?q=" +

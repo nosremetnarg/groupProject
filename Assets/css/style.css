@@ -18,6 +18,10 @@ body.lightmode{
     overflow: auto;
 }
 
+#topic-search-input {
+    color: #002A3A;
+}
+
 .banner {
     text-align: center;
     margin-bottom: 25px;
@@ -89,7 +93,7 @@ table td:hover > a, table td:active > a {
 }
 
 .form-label {
-    color:#FFFFFF;
+    color: #002A3A;
 }
 
 #profile-container {

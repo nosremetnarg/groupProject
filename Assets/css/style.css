@@ -34,6 +34,11 @@ select {
     margin-right: 150px;
 }
 
+#response-container img{
+    height: auto;
+    width: 230px;
+}
+
 #topic-search {
     max-width: 160px;
 }
@@ -90,4 +95,10 @@ table td:hover > a, table td:active > a {
     position: absolute;
     top: 10px;
     right: 10px;
+}
+
+.top-left {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }

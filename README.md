@@ -6,13 +6,16 @@
 
 *Educated Experts at Vanderbilt Universities Coding Bootcamp have been orking with coordination, determination and edibles to bring you an exciting new product!*
 
-*Get Ready to have your Minds Blown!*
+*[Get Ready to have your Minds Blown!](https://nosremetnarg.github.io/groupProject/)*
+
+
 
 ## Table of Contents
-* [Toggle Boggle](#toggle-boggle)
+* [Boggle Toggle](#boggle-toggle)
+* [Video](#video)
 * [Technologies](#technologies)
 
-## Toggle Boggle
+## Boggle Toggle
 
 Have you ever though to yourself, I wonder what 14 APIs minus 10 APIs search results could be simultaneously?
 
@@ -28,7 +31,11 @@ You click our link. Boogle? Toggle? There's a quote in the header! Forbes does t
 
 You click Boggle. The quote changes. Nothing else happens. You just start clicking Boggle over and over. It doesn't make any sense. The quotes have nothing to do with each other at all! You are ... Mind Boggled? 👀 Is this low key deep stuff?
 
+![Boggle](https://github.com/nosremetnarg/groupProject/blob/screen-sharing/Assets/css/Images/screen_shot_2020-07-22_at_2.44.12_pm.png)
+
 You press Toggle. The colors change. You click again. Back to the old color. Now you're Boggling and Toggling at 0400.
+
+![Toggle](https://github.com/nosremetnarg/groupProject/blob/screen-sharing/Assets/css/Images/screen_shot_2020-07-22_at_2.44.35_pm.png)
 
 You type "fire" in the search box.
 
@@ -36,8 +43,9 @@ A quote from Henry Firestone appears. A gif of a flamethrower appears. YouTube v
 
 It's 11 AM. You've searched 287 terms, watching 39 videos and you're late for work. Your boss is calling, but you swipe left. You've got some Bogglin to do.
 
-![Toggle](https://github.com/nosremetnarg/groupProject/blob/screen-sharing/Assets/css/Images/screen_shot_2020-07-22_at_2.44.12_pm.png)
-![Boggle](https://github.com/nosremetnarg/groupProject/blob/screen-sharing/Assets/css/Images/screen_shot_2020-07-22_at_2.44.35_pm.png)
+## Video
+
+https://drive.google.com/file/d/1nS_nDOTSZKNZ3nqsuRsLId3YSnrwHV8B/preview
 
 ## Technologies
 

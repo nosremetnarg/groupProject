@@ -251,27 +251,27 @@ const APPController = (function (UICtrl, APICtrl) {
         console.log(track.artists[0].name);
         const trackResult = track.artists[0].name;
 
-// // gets giphy related to the user selection
-        giphyFunction = function () {
-            // var searchTerm = document.querySelector("#band-search").value;
-            // console.log(searchTerm);
-            fetch("http://api.giphy.com/v1/gifs/search?q=" + trackResult + "&api_key=AdVi5Mrcl5ShIUm7GR1xlk3sOWLeV0sT"
-            )
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (response) {
-                    console.log(response.data[0]);
-                    console.log("this is ", trackResult);
-                    var responseContainerEl = document.querySelector("#response-container");
-                    // responseContainerEl.innerHTML = "";
-                    var gifImg = document.createElement("img");
-                    gifImg.setAttribute("src", response.data[0].images.fixed_height.url);
-                    responseContainerEl.appendChild(gifImg);
-                    // responseContainerEl.removeChild(responseContainerEl.childNodes[1]);
-                });
-        }
-        giphyFunction(trackResult);
+// // // gets giphy related to the user selection
+//         giphyFunction = function () {
+//             // var searchTerm = document.querySelector("#band-search").value;
+//             // console.log(searchTerm);
+//             fetch("http://api.giphy.com/v1/gifs/search?q=" + trackResult + "&api_key=AdVi5Mrcl5ShIUm7GR1xlk3sOWLeV0sT"
+//             )
+//                 .then(function (response) {
+//                     return response.json();
+//                 })
+//                 .then(function (response) {
+//                     console.log(response.data[0]);
+//                     console.log("this is ", trackResult);
+//                     var responseContainerEl = document.querySelector("#response-container");
+//                     // responseContainerEl.innerHTML = "";
+//                     var gifImg = document.createElement("img");
+//                     gifImg.setAttribute("src", response.data[0].images.fixed_height.url);
+//                     responseContainerEl.appendChild(gifImg);
+//                     // responseContainerEl.removeChild(responseContainerEl.childNodes[1]);
+//                 });
+//         }
+//         giphyFunction(trackResult);
 // display song lyrics
         var getSongLyrics = function () {
 
@@ -281,12 +281,13 @@ const APPController = (function (UICtrl, APICtrl) {
             fetch(songApi).then(function (response) {
                 return response.json().then(function (data) {
                     // displayLyrics(data, song);
+                    console.log(data)
                     console.log(data.lyrics);
                     var responseContainerEl = document.querySelector("#lyric-container");
                     responseContainerEl.innerHTML = data.lyrics;
-                    var artistQuote = document.createElement("span");
-                    // gifImg.setAttribute("src", data.lyrics);
-                    responseContainerEl.appendChild(artistQuote);;
+                    // var artistQuote = document.createElement("p");
+                    // // gifImg.setAttribute("src", data.lyrics);
+                    // responseContainerEl.appendChild(artistQuote);;
                 });
             })
         }

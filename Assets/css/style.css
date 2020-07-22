@@ -100,6 +100,10 @@ table td:hover > a, table td:active > a {
     border: 1px solid grey;
 }
 
+#lyric-container {
+    white-space: pre-wrap;
+}
+
 .top-right {
     position: absolute;
     top: 10px;

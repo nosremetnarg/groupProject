@@ -1,4 +1,4 @@
-# **ADD Interpreted: The Antithesis of Elegance**
+# ADD Interpreted: The Antithesis of Elegance
 
 *From the Studio that brought you Weather Apps without local storage.*
 
@@ -58,3 +58,5 @@ It's 11 AM. You've searched 287 terms, watching 39 videos and you're late for wo
   * Giphy
   * Random Quotes
   * Musixmatch
+  
+[Back to Top](#add-interpreted-the-antithesis-of-elegance)

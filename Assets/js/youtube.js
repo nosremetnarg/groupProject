@@ -7,7 +7,7 @@ function getDataFromYoutube(event) {
     event.preventDefault()
     let artist = document.getElementById("topic-search-input").value
     console.log(artist)
-    var url="https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=" + artist + "&key=AIzaSyAOSjM5e7ggNQmUUeBIRWxPyD46q_5MCQw";
+    var url="https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=4&q=" + artist + "&key=AIzaSyBQ1GFSeS6gr-Q4QZgRIdpLik6Ijpbv8mc";
     // console.log(url);
         $.ajax({
             url: url,

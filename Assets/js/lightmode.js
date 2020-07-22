@@ -1,4 +1,4 @@
-let lightMode = localStorage.getItem('lightmode');
+let lightMode = localStorage.getItem('lightMode');
 const lightToggle = document.querySelector('#light-mode-toggle');
 
 const enableLightMode = () => {
@@ -16,8 +16,10 @@ const disableLightMode = () => {
 }
 
 if (lightMode === 'Enabled') {
-   enableLightMode(); 
+enableLightMode();
+console.log("I'm running!");
 }
+
 
 lightToggle.addEventListener('click', () => {
     lightMode = localStorage.getItem('lightMode');

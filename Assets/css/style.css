@@ -2,9 +2,19 @@ html {
     min-height:100%;
 }
 
+header h3 {
+    text-align: center;
+}
+
 body {
     background-color: #002A3A;
     color: #CCCCCC;
+    overflow: auto;
+}
+
+body.lightmode{
+    background-color: #CCCCCC;
+    color: #002A3A;
     overflow: auto;
 }
 
@@ -21,7 +31,11 @@ select {
 }
 
 #left-column {
-    margin-right: 60px;
+    margin-right: 150px;
+}
+
+#topic-search {
+    max-width: 160px;
 }
 
 table td {  
@@ -29,8 +43,17 @@ table td {
     padding-left: 10px !important;
 }
 
+.lightmode table td {
+    background-color:rgba(152, 154, 155, .75);
+    padding-left: 10px !important;
+}
+
 table td:hover, table td:active {  
     background-color: #002A3A;
+}
+
+.lightmode table td:hover, .lightmode table td:active {  
+    background-color: #cdcbcd;
 }
 
 table td a {
@@ -38,8 +61,17 @@ table td a {
     color: #ffffff;
 }
 
-table td a:hover, table td a:active {
-    color: #CCCCCC; 
+.lightmode table td a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+table td:hover > a, table td:active > a {
+    color: #cccccc;
+}
+
+.lightmode table td:hover > a, .lightmode table td:active > a {
+    color: #002A3A;
 }
 
 .form-label {
@@ -54,8 +86,8 @@ table td a:hover, table td a:active {
     border: 1px solid grey;
 }
 
-footer {
+.top-right {
     position: absolute;
-    width: 100%;
-    bottom: 0;
+    top: 10px;
+    right: 10px;
 }

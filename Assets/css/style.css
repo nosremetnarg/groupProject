@@ -2,6 +2,7 @@ html {
     min-height:100%;
 }
 
+
 header h3 {
     text-align: center;
 }
@@ -36,6 +37,7 @@ select {
 
 #left-column {
     margin-right: 150px;
+    align-items: center;
 }
 
 #response-container img{

@@ -202,6 +202,7 @@ input[type="button"]:focus {
   outline: 0; }
 .button.button-primary,
 button.button-primary,
+button.button-primary
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {

@@ -1,4 +1,5 @@
 // Random generated quote. Click the Random button to recieve random quote
+var searches = JSON.parse(localStorage.getItem("searches")) || [];
 
 document.getElementById("random-btn").addEventListener("click", myRandomFunction)
 var myRandomFunction = function () {
@@ -49,6 +50,7 @@ myRandomFunction();
 var myFunction = function () {
     var searchTerm = document.querySelector("#topic-search-input").value;
     console.log("Your search term was " + searchTerm);
+    localStorage.setItem("searchTerm", searchTerm);
     console.log("Search function was called");
     fetch(`https://quote-garden.herokuapp.com/api/v2/authors/${searchTerm}?page=1&limit=10`)
         .then(function (response) {
@@ -66,10 +68,10 @@ var myFunction = function () {
                     // searchContainerEl.appendChild(data.quote.quoteText);
 
                     // LOCAL STORAGE
-                    localStorage.setItem("randomQuote", data.quotes[0].quoteText, data.quotes[0].quoteAuthor);
+                    // localStorage.setItem("randomQuote", data.quotes[0].quoteText, data.quotes[0].quoteAuthor);
                 });
-            } 
-        }); 
+            }
+        });
 }
 // gets giphy related to the user search
 giphyFunction = function () {
@@ -90,8 +92,31 @@ giphyFunction = function () {
             gifImg.setAttribute("src", response.data[0].images.fixed_height.url)
             responseContainerEl.appendChild(gifImg);
 
-            localStorage.setItem("giphy", response.data[0].images.fixed_height.url)
-            localStorage.setItem("searchTerm", searchTerm);
+            // localStorage.setItem("giphy", response.data[0].images.fixed_height.url)
+            
 
         });
 }
+console.log("This is localStorage", localStorage);
+
+// revert to last search
+goBackFunction = function () {
+    // var searchTerm = JSON.parse(localStorage.getItem("searchTerm")) || [];
+console.log("goback has been clicked", searchTerm);
+
+};
+for (let i = 0; index < searchTerm.length; i++) {
+    myFunction(searchTerm[i])
+};
+// var saveSearches = function () {
+//     localStorage.setItem("searches", JSON.stringify(searchTerm));
+//     event.preventDefault();
+// };
+
+// saveSearchFunction = function () {
+//     e.preventDefault();
+
+//     const searchValue = {
+//         key: searchValue
+//     };
+// }

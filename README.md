@@ -36,6 +36,9 @@ A quote from Henry Firestone appears. A gif of a flamethrower appears. YouTube v
 
 It's 11 AM. You've searched 287 terms, watching 39 videos and you're late for work. Your boss is calling, but you swipe left. You've got some Bogglin to do.
 
+![Toggle](https://github.com/nosremetnarg/groupProject/blob/screen-sharing/Assets/css/Images/screen_shot_2020-07-22_at_2.44.12_pm.png)
+![Boggle](
+
 ## Technologies
 
 * HTML

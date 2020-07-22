@@ -8,8 +8,6 @@
 
 ***[Get Ready to have your Minds Blown!](https://nosremetnarg.github.io/groupProject/)***
 
-
-
 ## Table of Contents
 * [Boggle Toggle](#boggle-toggle)
 * [Video](#video)

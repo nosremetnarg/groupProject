@@ -19,33 +19,22 @@ document.getElementById("#btn"), addEventListener('click', getDataFromYoutube)
 //     }
 //     )};
 
-
 function getDataFromYoutube(event) {
     event.preventDefault()
-    let artist = input 
-    var url=`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${artist}&key=AIzaSyBQ1GFSeS6gr-Q4QZgRIdpLik6Ijpbv8mc`
+    let artist = document.getElementById("band-search").value
+    console.log(artist)
+    var url="https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=" + artist + "&key=AIzaSyBQ1GFSeS6gr-Q4QZgRIdpLik6Ijpbv8mc";
     console.log(url);
-
-    function callYoutube(myExpression) {
-        var queryURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${artist}&key=AIzaSyBQ1GFSeS6gr-Q4QZgRIdpLik6Ijpbv8mc' + myExpression + '&safeSearch=strict&key=AIzaSyBQ1GFSeS6gr-Q4QZgRIdpLik6Ijpbv8mc&type=video';
-
-        console.log(myExpression)
-
+    // function callYoutube(myExpression) {
+    //     var queryURL = 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=' + myExpression + '&safeSearch=strict&key=AIzaSyBQ1GFSeS6gr-Q4QZgRIdpLik6Ijpbv8mc&type=video';
+        // console.log(myExpression)
         $.ajax({
-            url: queryURL,
+            url: url,
             method: "GET"
-
         }).then(function (response) {
             console.log(response);
             var results = response.items["0"].id.videoId;
-
             console.log("this is the variable results:" + results)
-
-
             $("#youtubeDiv").html('<iframe id="youtubeFrame" style="background-size: cover" src="https://www.youtube.com/embed/' + results + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
         })
     }
-    // callYoutube();
-
-
-

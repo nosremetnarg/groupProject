@@ -37,9 +37,9 @@ You press Toggle. The colors change. You click again. Back to the old color. Now
 
 You type "fire" in the search box.
 
-A quote from Henry Firestone appears. A gif of a flamethrower appears. YouTube videos about fire appear. You start playing a fireplace video made by a company name after cats. You've done down the rabbit hole.
+A quote from Henry Firestone appears. A gif of a flamethrower appears. YouTube videos about fire appear. You start playing a fireplace video made by a company named after cats. You've gone down the rabbit hole.
 
-It's 11 AM. You've searched 287 terms, watching 39 videos and you're late for work. Your boss is calling, but you swipe left. You've got some Bogglin to do.
+It's 1100. You've searched 287 terms, watching 39 videos and you're late for work. Your boss is calling, but you swipe left. You've got some Bogglin to do.
 
 ## Video
 

@@ -288,6 +288,8 @@ const APPController = (function (UICtrl, APICtrl) {
                     // var artistQuote = document.createElement("p");
                     // // gifImg.setAttribute("src", data.lyrics);
                     // responseContainerEl.appendChild(artistQuote);;
+
+                    localStorage.setItem("lyrics", data.lyrics)
                 });
             })
         }
@@ -318,7 +320,6 @@ const APPController = (function (UICtrl, APICtrl) {
         // } 
         // myFunction(trackResult);
     });
-
     return {
         init() {
             console.log('App is starting');

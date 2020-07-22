@@ -66,7 +66,7 @@ var myFunction = function () {
                     // searchContainerEl.appendChild(data.quote.quoteText);
 
                     // LOCAL STORAGE
-                    localStorage.setItem("searchTerm", data.quotes[0].quoteText, data.quotes[0].quoteAuthor);
+                    localStorage.setItem("randomQuote", data.quotes[0].quoteText, data.quotes[0].quoteAuthor);
                 });
             } 
         }); 
@@ -89,5 +89,9 @@ giphyFunction = function () {
             var gifImg = document.createElement("img");
             gifImg.setAttribute("src", response.data[0].images.fixed_height.url)
             responseContainerEl.appendChild(gifImg);
+
+            localStorage.setItem("giphy", response.data[0].images.fixed_height.url)
+            localStorage.setItem("searchTerm", searchTerm);
+
         });
 }

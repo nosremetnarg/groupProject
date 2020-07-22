@@ -26,5 +26,9 @@ function getDataFromYoutube(event) {
             var results = response.items["3"].id.videoId;
             console.log("this is the variable results:" + results)
             $("#youtubeDiv4").html('<iframe id="youtubeFrame" width="400" height="200" style="background-size: cover" src="https://www.youtube.com/embed/' + results + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+            localStorage.setItem("video1", response.items["0"].id.videoId); 
+            localStorage.setItem("video2", response.items["1"].id.videoId);
+            localStorage.setItem("video3", response.items["2"].id.videoId);
+            localStorage.setItem("video4", response.items["3"].id.videoId);
         })
     }

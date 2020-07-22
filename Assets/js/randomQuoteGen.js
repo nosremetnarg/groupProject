@@ -8,6 +8,7 @@ var myRandomFunction = function () {
         .then(function (response) {
             response.json().then(function (data) {
                 console.log(data);
+                
                 console.log(data.quote.quoteText);
                 var responseContainerEl = document.querySelector("#random-response-container");
                 var randomresponseContainerEl = document.querySelector("#random-response-author");
@@ -74,9 +75,9 @@ var myFunction = function () {
 // gets giphy related to the user search
 giphyFunction = function () {
     var searchTerm = document.querySelector("#topic-search-input").value;
-    console.log(searchTerm);
+    console.log("your gif search was", searchTerm);
 
-    fetch("http://api.giphy.com/v1/gifs/search?q=" +
+    fetch("https://api.giphy.com/v1/gifs/search?q=" +
         searchTerm + "&api_key=AdVi5Mrcl5ShIUm7GR1xlk3sOWLeV0sT"
     )
         .then(function (response) {

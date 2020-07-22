@@ -6,7 +6,7 @@
 
 *Educated Experts at Vanderbilt Universities Coding Bootcamp have been orking with coordination, determination and edibles to bring you an exciting new product!*
 
-*[Get Ready to have your Minds Blown!](https://nosremetnarg.github.io/groupProject/)*
+***[Get Ready to have your Minds Blown!](https://nosremetnarg.github.io/groupProject/)***
 
 
 

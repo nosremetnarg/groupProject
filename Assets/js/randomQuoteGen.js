@@ -3,13 +3,13 @@
 document.getElementById("random-btn").addEventListener("click", myRandomFunction)
 var myRandomFunction = function () {
 
-    console.log("random search was called");
+    // console.log("random search was called");
     fetch("https://quote-garden.herokuapp.com/api/v2/quotes/random")
         .then(function (response) {
             response.json().then(function (data) {
-                console.log(data);
+                // console.log(data);
                 
-                console.log(data.quote.quoteText);
+                // console.log(data.quote.quoteText);
                 var responseContainerEl = document.querySelector("#random-response-container");
                 var randomresponseContainerEl = document.querySelector("#random-response-author");
                 responseContainerEl.innerHTML = data.quote.quoteText;
@@ -49,13 +49,13 @@ myRandomFunction();
 // document.getElementById("btn").addEventListener("click", myFunction) 
 var myFunction = function () {
     var searchTerm = document.querySelector("#topic-search-input").value;
-    console.log("Your search term was " + searchTerm);
-    console.log("Search function was called");
+    // console.log("Your search term was " + searchTerm);
+    // console.log("Search function was called");
     fetch(`https://quote-garden.herokuapp.com/api/v2/authors/${searchTerm}?page=1&limit=10`)
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
-                    console.log(data);
+                    // console.log(data);
                     var searchContainerEl = document.querySelector(".randomquoteHere");
                     searchContainerEl.innerHTML = data.quotes[0].quoteText;
                     var searchEl = document.createElement("div");
@@ -67,7 +67,7 @@ var myFunction = function () {
                     // searchContainerEl.appendChild(data.quote.quoteText);
 
                     // LOCAL STORAGE
-                    localStorage.setItem("searchTerm", data.quotes[0].quoteText, data.quotes[0].quoteAuthor);
+                    localStorage.setItem("searchTerm", searchTerm);
                 });
             } 
         }); 
@@ -75,7 +75,7 @@ var myFunction = function () {
 // gets giphy related to the user search
 giphyFunction = function () {
     var searchTerm = document.querySelector("#topic-search-input").value;
-    console.log("your gif search was", searchTerm);
+    // console.log("your gif search was", searchTerm);
 
     fetch("https://api.giphy.com/v1/gifs/search?q=" +
         searchTerm + "&api_key=AdVi5Mrcl5ShIUm7GR1xlk3sOWLeV0sT"
@@ -84,7 +84,7 @@ giphyFunction = function () {
             return response.json();
         })
         .then(function (response) {
-            console.log(response.data[0]);
+            // console.log(response.data[0]);
             var responseContainerEl = document.querySelector("#response-container");
             responseContainerEl.innerHTML = "";
             var gifImg = document.createElement("img");

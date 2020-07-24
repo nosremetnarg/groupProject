@@ -8,7 +8,7 @@ var myRandomFunction = function () {
         .then(function (response) {
             response.json().then(function (data) {
                 // console.log(data);
-                
+
                 // console.log(data.quote.quoteText);
                 var responseContainerEl = document.querySelector("#random-response-container");
                 var randomresponseContainerEl = document.querySelector("#random-response-author");
@@ -66,11 +66,15 @@ var myFunction = function () {
                     authorEl.setAttribute("class", "randomAuthorHere");
                     // searchContainerEl.appendChild(data.quote.quoteText);
 
+                    
                     // LOCAL STORAGE
-                    localStorage.setItem("searchTerm", searchTerm);
-                });
-            } 
-        }); 
+                    // var searchArr = JSON.parse(localStorage.getItem('searchTerm') || '[]');
+                    // searchArr.push(searchTerm);
+                    // localStorage.setItem("searchTerm",
+                    //     JSON.stringify(searchArr));
+                })
+            }
+        });
 }
 // gets giphy related to the user search
 giphyFunction = function () {
@@ -91,4 +95,12 @@ giphyFunction = function () {
             gifImg.setAttribute("src", response.data[0].images.fixed_height.url)
             responseContainerEl.appendChild(gifImg);
         });
+}
+
+storageFunction = function () {
+    var searchTerm = document.querySelector("#topic-search-input").value;
+     var searchArr = JSON.parse(localStorage.getItem('searchTerm') || '[]');
+                    searchArr.push(searchTerm);
+                    localStorage.setItem('searchTerm',
+                        JSON.stringify(searchArr));
 }

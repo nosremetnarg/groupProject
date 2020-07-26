@@ -47,8 +47,8 @@ myRandomFunction();
 // trying to connect the buttons for giphy and random quote
 // Search Term Quote. Using User input to search for a quote
 // document.getElementById("btn").addEventListener("click", myFunction) 
-var myFunction = function () {
-    var searchTerm = document.querySelector("#topic-search-input").value;
+var myFunction = function (buttonInput) {
+    var searchTerm = buttonInput || document.querySelector("#topic-search-input").value;
     // console.log("Your search term was " + searchTerm);
     // console.log("Search function was called");
     fetch(`https://quote-garden.herokuapp.com/api/v2/authors/${searchTerm}?page=1&limit=10`)
@@ -66,7 +66,7 @@ var myFunction = function () {
                     authorEl.setAttribute("class", "randomAuthorHere");
                     // searchContainerEl.appendChild(data.quote.quoteText);
 
-                    
+
                     // LOCAL STORAGE
                     // var searchArr = JSON.parse(localStorage.getItem('searchTerm') || '[]');
                     // searchArr.push(searchTerm);
@@ -77,10 +77,8 @@ var myFunction = function () {
         });
 }
 // gets giphy related to the user search
-giphyFunction = function () {
-    var searchTerm = document.querySelector("#topic-search-input").value;
-    // console.log("your gif search was", searchTerm);
-
+giphyFunction = function (buttonInput) {
+    var searchTerm = buttonInput  || document.querySelector("#topic-search-input").value;
     fetch("https://api.giphy.com/v1/gifs/search?q=" +
         searchTerm + "&api_key=AdVi5Mrcl5ShIUm7GR1xlk3sOWLeV0sT"
     )
@@ -99,8 +97,46 @@ giphyFunction = function () {
 
 storageFunction = function () {
     var searchTerm = document.querySelector("#topic-search-input").value;
-     var searchArr = JSON.parse(localStorage.getItem('searchTerm') || '[]');
-                    searchArr.push(searchTerm);
-                    localStorage.setItem('searchTerm',
-                        JSON.stringify(searchArr));
+    var searchArr = JSON.parse(localStorage.getItem('searchTerm') || '[]');
+    searchArr.push(searchTerm);
+    localStorage.setItem('searchTerm',
+        JSON.stringify(searchArr));
+    
+    // append recent searches to DOM 
+    var recentSearch = document.getElementById("searchHistory");
+    var previousSearch  = document.createElement("p")
+    previousSearch.innerHTML = searchTerm;
+    previousSearch.setAttribute("class", "previousSearch");
+  
+    recentSearch.appendChild(previousSearch);
+
+    document.querySelector(".previousSearch").addEventListener("click", function(e) {
+        var newInput = e.target.innerHTML;
+        giphyFunction(newInput);
+        myFunction(newInput);
+      
+        
+    });
+    // clears search field
+    document.querySelector("#topic-search-input").value = "";
+
 }
+
+
+
+// function searchFunction() {
+
+//     // searchArr.push($('#topic-search-input').val()); // This line puts the value from the text box in an array
+//     console.log("This is working");
+//     $('#topic-search-input').val(""); //  clear the text box after search
+//     $('#searchHistory').text(""); //clear the seach history window then repopulate with the new array
+//     $.each(searchArr, function (value) {
+//         $('#searchHistory').append(
+//             "<li class='historyItem' onclick='topic-search(" + searchTerm + ")'>" 
+//         + value + '</li>');
+//     });
+//     function topic-search(searchTerm) {
+//         $('#textboxSearch').val(searchArr[i]);
+//     }
+// };
+

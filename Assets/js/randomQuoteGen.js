@@ -78,7 +78,7 @@ var myFunction = function (buttonInput) {
 }
 // gets giphy related to the user search
 giphyFunction = function (buttonInput) {
-    var searchTerm = buttonInput  || document.querySelector("#topic-search-input").value;
+    var searchTerm = buttonInput || document.querySelector("#topic-search-input").value;
     fetch("https://api.giphy.com/v1/gifs/search?q=" +
         searchTerm + "&api_key=AdVi5Mrcl5ShIUm7GR1xlk3sOWLeV0sT"
     )
@@ -101,25 +101,22 @@ storageFunction = function () {
     searchArr.push(searchTerm);
     localStorage.setItem('searchTerm',
         JSON.stringify(searchArr));
-    
+
     // append recent searches to DOM 
     var recentSearch = document.getElementById("searchHistory");
-    var previousSearch  = document.createElement("p")
+    var previousSearch = document.createElement("p")
     previousSearch.innerHTML = searchTerm;
     previousSearch.setAttribute("class", "previousSearch");
-  
     recentSearch.appendChild(previousSearch);
 
-    document.querySelector(".previousSearch").addEventListener("click", function(e) {
+    // listens for click on previous searches
+    document.querySelector(".previousSearch").addEventListener("click", function (e) {
         var newInput = e.target.innerHTML;
         giphyFunction(newInput);
         myFunction(newInput);
-      
-        
     });
     // clears search field
     document.querySelector("#topic-search-input").value = "";
-
 }
 
 
